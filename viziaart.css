@@ -406,12 +406,17 @@ header {
 
 footer {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-between;
-    padding: 3rem 4rem;
-    font-size: 18px;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    padding: 2rem 1rem;
     background-color: aquamarine;
+    font-size: 16px;
+    text-align: center;
+    .rights p {
+        margin: 0;
+    }
 }
 
 
@@ -527,10 +532,8 @@ footer {
         padding: 1.5rem;
     }
     footer {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 2rem 1rem;
-        text-align: center;
+        min-height: 80px;
+        padding: 1.5rem 1rem;
     }
     #home,
     #about,
