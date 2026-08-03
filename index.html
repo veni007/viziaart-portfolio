@@ -15,6 +15,10 @@
             <h1 class="logo">ViziaArt</h1>
             <p>Създавам сайтове, обучителни материали<br> и дигитални решения.</p>
         </div>
+        <button class="menu-toggle" aria-label="Отвори менюто" aria-expanded="false">
+            ☰
+        </button>
+
         <nav class="navclass">
             <ul class="navi">
                 <li><a href="#home">Начало</a></li>
@@ -32,7 +36,8 @@
                 <h2>Образование. Технологии. Дизайн.</h2>
                 <p>Превръщам идеи в работещи уеб проекти, учебни ресурси и дигитално съдържание.</p>
                 <p class="hero-author">
-                    <strong>Венета Русковска</strong> • Учител по информатика • Web Developer • WordPress
+                    <strong>Венета Русковска</strong>
+                    <span>Учител по информатика • Web Developer • WordPress</span>
                 </p>
                 <a href="#projects" class="btn">Моите проекти </a>
             </div>
@@ -102,7 +107,7 @@
 
                     <a href="school-flyer-combined.png" target="_blank" class="btn">Разгледай</a>
                 </article>
-                </article>
+
 
             </div>
         </section>
@@ -208,6 +213,25 @@
             <p>Всички права запазени 2026</p>
         </div>
     </footer>
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector(".navclass");
+
+        menuButton.addEventListener("click", function() {
+            const isOpen = navigation.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+            menuButton.textContent = isOpen ? "✕" : "☰";
+        });
+
+        document.querySelectorAll(".navi a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                navigation.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.textContent = "☰";
+            });
+        });
+    </script>
 </body>
 
 </html>
